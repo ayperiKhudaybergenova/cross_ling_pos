@@ -1,5 +1,5 @@
 
-# Karakalpak NLP Pipeline
+# Addressing Agglutinative Complexity: A Cross-Lingual Pipeline for Karakalpak NLP.
 
 A computational linguistics project dedicated to building robust NLP resources for the Karakalpak language using Universal Dependencies (UD) and finite-state morphology.
 
