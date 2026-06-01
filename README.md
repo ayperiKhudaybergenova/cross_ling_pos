@@ -22,7 +22,7 @@ Our pipeline bridges the gap between neural performance and linguistic rigor:
 | **Turkish** | Framework reference | Adapted established mature NLP treebank logic. |
 | **FSTs (`.lexc`)** | Morphology Engine | Defined valid morphological transitions for word building. |
 | **Stanza** | Neural Parser | Used for high-performance initial POS tagging. |
-| **Python** | Logic Glue | Implemented correction layers for function words and tokens. |
+
 
 ## Key Findings & Improvements
 
