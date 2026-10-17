@@ -4,7 +4,7 @@
 
 This project investigates cross-lingual part-of-speech (POS) tagging for Karakalpak, a low-resource Turkic language. The main objective is to examine whether NLP models trained on other Turkic languages can provide useful POS predictions for Karakalpak text without requiring a model trained from scratch on a large Karakalpak-annotated dataset.
 
-The project uses Stanza pipelines for Turkish and Kazakh to assign Universal Part-of-Speech (UPOS) tags to Karakalpak text. These languages were selected because they provide different types of linguistic similarity: Kazakh and Karakalpak belong to the Kipchak branch of the Turkic language family, while Turkish belongs to the Oghuz branch. Comparing their predictions allows us to investigate how language relatedness may affect cross-lingual transfer.
+The project uses Stanza pipelines for Turkish and Kazakh to assign Universal Part-of-Speech (UPOS) tags to Karakalpak text. These languages were selected because they provide different types of linguistic similarity: Kazakh and Karakalpak belong to the Kipchak branch of the Turkic language family, while Turkish belongs to the Oghuz branch and more  investigated. Comparing their predictions allows us to investigate how language relatedness may affect cross-lingual transfer.
 
 The project also examines whether Karakalpak-specific lexical and suffix-based rules can correct errors in the transferred predictions. The results will be compared against manually annotated Karakalpak examples.
 
