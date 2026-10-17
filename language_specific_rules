@@ -1,0 +1,44 @@
+## Karakalpak Language Specific Rules and Linguistic Adjustments
+
+### Character Filtering and Alphabet Constraints
+The data processing script uses regular expression functions with specific Karakalpak alphabet character sets to capture letters unique to the language. These characters include vowels and consonants such as á, ǵ, í, ń, ó, q, sh, ú, ý, ә, and ç. The script filters isolate these character tokens from text noise and punctuation.
+
+### Suffix Merging Rules
+The Python filter function merges split token sequences based on Karakalpak grammar rules. Script execution checks adjacent tokens in sentence arrays and combines base tokens with specific suffix particles such as ń, ǵı, te, ti, tı, ni, and nı when sentence IDs match. Conditional statements convert word parts classified as numbers or verbs into noun parts of speech after suffix merging.
+
+### Closed-Class Lexical Overrides
+Dictionary mapping arrays define static grammar overrides for frequent closed-class Karakalpak words that cross-lingual models misclassify. Specific lexical items receive designated part-of-speech tags:
+* ushın maps to adposition (ADP).
+* menen maps to adposition (ADP).
+* hám maps to coordinating conjunction (CCONJ).
+* ol and olar map to pronouns (PRON).
+* emes maps to auxiliary verb (AUX).
+* edi maps to auxiliary verb (AUX).
+* boldı maps to verb (VERB).
+* kerek maps to adjective (ADJ).
+* bul maps to pronoun (PRON).
+* bir maps to numeral (NUM).
+* bolıwı maps to verb (VERB).
+* e maps to particle (PART).
+
+### Verbal Noun and Gerund Suffix Rules
+Regular expression search patterns identify Karakalpak verbal nouns and gerund forms ending in specific morpheme variations. Words containing suffixes matching iw or ıw combined with case markers such as ǵa, ge, dı, di, dan, den, or plural marker lar undergo part-of-speech reassignment to verbs (VERB).
+
+### Participle and Aspectual Marker Rules
+Python conditional regex checks detect Karakalpak participle structures and continuous aspect markers. Words ending in suffixes matching atuǵın, etuǵın, or tuǵın update to verb tags (VERB). Tokens ending in past or continuous markers such as ǵan, gen, qan, ken, or atır that receive initial numeral or noun tags undergo correction to verbs (VERB).
+
+### Transliteration Rules for Cyrillic Mapping
+The Python mapping dictionary converts Latin-script Karakalpak characters into Cyrillic script equivalents to integrate with the Kazakh Stanza parser pipeline. Character substitution rules map specific Latin graphemes to Cyrillic letters:
+* q maps to қ.
+* ǵ maps to ғ.
+* ń maps to ң.
+* sh maps to ш.
+* ch maps to ч.
+* ı maps to і.
+* ó maps to ө.
+* ú maps to ү.
+* w maps to ў.
+* h maps to һ.
+
+### Post-Correction Suffix and Punctuation Rules
+The post-processing function evaluates alphanumeric status to assign punctuation tags (PUNCT) for non-alphanumeric tokens. Suffix conditions check string endings for derivative adjective morphemes (li or lı) to assign adjective part-of-speech tags (ADJ).
