@@ -1,15 +1,46 @@
+# Cross-Lingual POS Tagging for Karakalpak
 
-# Addressing Agglutinative Complexity: A Cross-Lingual Pipeline for Karakalpak NLP.
+## Project Overview
 
-A computational linguistics project dedicated to building robust NLP resources for the Karakalpak language using Universal Dependencies (UD) and finite-state morphology.
+This project investigates cross-lingual part-of-speech (POS) tagging for Karakalpak, a low-resource Turkic language. The main objective is to examine whether NLP models trained on other Turkic languages can provide useful POS predictions for Karakalpak text without requiring a model trained from scratch on a large Karakalpak-annotated dataset.
 
-## Overview
+The project uses Stanza pipelines for Turkish and Kazakh to assign Universal Part-of-Speech (UPOS) tags to Karakalpak text. These languages were selected because they provide different types of linguistic similarity: Kazakh and Karakalpak belong to the Kipchak branch of the Turkic language family, while Turkish belongs to the Oghuz branch. Comparing their predictions allows us to investigate how language relatedness may affect cross-lingual transfer.
 
-This project addresses the linguistic resource gap for Karakalpak, a Turkic language of the Kipchak branch. By integrating rule-based finite-state transducers (FSTs) with neural models, we provide a reproducible pipeline for morphological analysis and POS tagging.
+The project also examines whether Karakalpak-specific lexical and suffix-based rules can correct errors in the transferred predictions. The results will be compared against manually annotated Karakalpak examples.
 
-## Research Purpose
+## Research Questions
 
-The objective is to establish standardized linguistic data for Karakalpak. By adhering to the **Universal Dependencies (UD) CoNLL-U standard**, we ensure our annotations are interoperable with global linguistic research, facilitating comparative studies across the Turkic language family.
+1. How well can Stanza models trained for Turkish and Kazakh assign POS tags to Karakalpak text?
+2. Does the Kazakh model perform differently from the Turkish model on the same Karakalpak examples?
+3. Which POS-tagging errors are associated with Karakalpak vocabulary, agglutinative morphology, and differences in tokenization?
+4. Can language-specific correction rules improve tagging performance?
+5. How does TurkicNLP perform on the same manually annotated evaluation data?
+
+## Methodological Approach
+
+The project follows a comparative, cross-lingual approach:
+
+1. **Corpus preparation:** Load Karakalpak text, inspect the data, and select sentences for analysis.
+2. **Turkish baseline:** Apply the Turkish Stanza pipeline to Karakalpak text and save the predicted POS tags.
+3. **Kazakh baseline:** Apply the Kazakh Stanza pipeline, using transliteration where required by the model's script, and examine its predictions.
+4. **Error correction:** Apply selected Karakalpak lexical and morphological rules to investigate whether they correct model errors.
+5. **Manual evaluation:** Compare model predictions against manually assigned UPOS tags.
+6. **TurkicNLP comparison:** Evaluate the existing toolkit on the same eligible test examples and compare the results using consistent evaluation procedures.
+
+The purpose is not to assume that a related language will automatically produce accurate results. Instead, the project tests how far cross-lingual transfer works for Karakalpak and identifies where language-specific information is needed.
+
+## Current Work
+
+The repository contains experimental outputs from Turkish and Kazakh Stanza tagging, a transliterated Kazakh input, a correction log, a Python lexical rules file, and a manually annotated dataset of 100 examples.
+
+The current outputs provide a starting point for systematic evaluation. The next step is to verify the manual annotation format, ensure consistent token alignment, and calculate baseline accuracy before making claims about improvements.
+
+## Scope and Limitations
+
+The current work focuses on POS tagging, rather than full syntactic parsing or a complete morphological analyzer. The Turkish and Kazakh models are used as cross-lingual baselines; their predictions are not assumed to be correct for Karakalpak.
+
+Karakalpak-specific rules are treated as experimental corrections. Their value must be measured on data that were not used to develop the rules. The project will report measured accuracy and error patterns rather than assuming that any model or correction method is better in advance.
+
 
 ## Methodology & Comparative Analysis
 
