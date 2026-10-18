@@ -74,7 +74,22 @@ python fixer_script.py --input final_tagged_data.txt
 
 ```
 
+Performance by Turkic NLP  POS tag
 
+POS tag	Precision	Recall	F1-score	Support
+NOUN	0.83	0.75	0.79	550
+VERB	0.73	0.89	0.80	184
+PUNCT	0.96	0.86	0.91	237
+ADJ	0.71	0.58	0.64	157
+PROPN	0.57	0.86	0.68	79
+NUM	0.58	0.89	0.70	37
+PRON	0.51	0.67	0.58	42
+CCONJ	0.47	0.60	0.53	43
+ADP	0.46	0.61	0.53	31
+ADV	0.57	0.37	0.45	46
+AUX	0.80	0.50	0.62	24
+DET	0.42	0.19	0.26	27
+PART	0.07	0.33	0.12	3
 
 ```
 3. **Export:** The script will output a cleaned `corrected_tagged_data.txt` file ready for your UD treebank.
