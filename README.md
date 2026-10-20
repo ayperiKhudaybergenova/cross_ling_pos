@@ -16,6 +16,8 @@ The project also examines whether Karakalpak-specific lexical and suffix-based r
 4. Can language-specific correction rules improve tagging performance?
 5. How does TurkicNLP perform on the same manually annotated evaluation data?
 
+https://github.com/turkic-nlp/turkicnlp
+
 ## Methodological Approach
 
 The project follows a comparative, cross-lingual approach:
